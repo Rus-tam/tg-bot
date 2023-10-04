@@ -18,5 +18,14 @@ export class StartCommand extends Command {
         ]),
       );
     });
+
+    this.bot.action("course_like", (ctx) => {
+      ctx.session.courseLike = true;
+      ctx.editMessageText("Круто!!!");
+    });
+    this.bot.action("course_dislike", (ctx) => {
+      ctx.session.courseLike = false;
+      ctx.editMessageText("Печально");
+    });
   }
 }
